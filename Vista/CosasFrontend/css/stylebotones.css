@@ -1,0 +1,339 @@
+.margintop25px{
+	margin-top: 25px;
+}
+
+.letrasGrandes{
+	font-size: xx-large;
+}
+.letrasMedianas{
+	font-size: x-large;
+}
+
+
+
+/* <!-- Estilo para los botones de la pagina en redes sociales--> */
+/*Social Baic a*/
+.ats-basic-a {
+	padding-left: 0;
+}
+
+.ats-basic-a li {
+	display: inline-block;
+	margin: .5em;
+}
+
+.ats-basic-a li a {
+	display: block;
+	position: relative;
+}
+
+.ats-basic-a li a span {
+	position: absolute;
+	top: -38px;
+	left: 0;
+	padding: 3px 18px;
+	background: rgba(0, 0, 0, 0.65);
+	-webkit-transform: skewX(-10deg);
+	transform: skewX(-10deg);
+	color: #fff;
+	font-size: 11px;
+	letter-spacing: 1px;
+	display: inline-block;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: top .25s cubic-bezier(0.25, 0.1, 0.66, 0.68), opacity .25s cubic-bezier(0.25, 0.1, 0.63, 0.6);
+	transition: top .25s cubic-bezier(0.25, 0.1, 0.66, 0.68), opacity .25s cubic-bezier(0.25, 0.1, 0.63, 0.6);
+}
+
+.ats-basic-a li a span:after {
+	content: '';
+	position: absolute;
+	left: 20px;
+	border: 6px solid transparent;
+	border-top-color: rgba(0, 0, 0, 0.65);
+	bottom: -12px;
+}
+
+.ats-basic-a li a:hover span {
+	top: -40px;
+	opacity: 1;
+	visibility: visible;
+}
+
+.ats-basic-a li a i {
+	height: 70px;
+	width: 70px;
+	line-height: 70px;
+	font-size: 26px;
+	text-align: center;
+	color: #bbb;
+	background-color: rgba(0, 0, 0, 0.1);
+	-webit-box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.05);
+	box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.05);
+	-webkit-transform: skewX(-10deg);
+	transform: skewX(-10deg);
+	-webkit-transition: background-color .3s ease, color .1s ease-in-out;
+	transition: background-color .3s ease, color .1s ease-in-out;
+}
+
+.ats-basic-a.light li a i {
+	color: #e8e8e8;
+	background-color: rgba(255, 255, 255, 0.1);
+	box-shadow: 3px 3px 0px rgba(255, 255, 255, 0.05);
+}
+
+.ats-basic-a li a i:hover {
+	color: #fff
+}
+
+.ats-basic-a li a:hover i[class*="-facebook"] {
+	background-color: #4766A9;
+}
+
+.ats-basic-a li a:hover i[class*="-twitter"] {
+	background-color: #00ACED;
+}
+
+.ats-basic-a li a:hover i[class*="-google-plus"] {
+	background-color: #DB4437;
+}
+
+.ats-basic-a li a:hover i[class*="-dribbble"] {
+	background-color: #CB5D9C;
+}
+
+.ats-basic-a li a:hover i[class*="-linkedin"] {
+	background-color: #0177B5;
+}
+
+.ats-basic-a li a:hover i[class*="-instagram"] {
+	background-color: #97369D;
+}
+
+.ats-basic-a li a:hover i[class*="-pinterest"] {
+	background-color: #BB0B1F;
+}
+
+.ats-basic-a li a:hover i[class*="-github"] {
+	background-color: #323131;
+}
+
+.ats-basic-a li a:hover i[class*="-flickr"] {
+	background-color: #FF1981;
+}
+
+.ats-basic-a li a:hover i[class*="-vk"] {
+	background-color: #4C75A3;
+}
+
+/* <!-- Estilo para los botones de la pagina en general --> */
+/* 3D D */
+.atb-3d-d {
+	background: #eee;
+	color: #444;
+	box-shadow: -4px 0 #ddd;
+}
+
+.atb-3d-d:hover {
+	box-shadow: -2px 0 #ddd;
+	left: -1px;
+}
+
+.atb-3d-d:active {
+	box-shadow: 0 0 #ddd;
+	left: -4px;
+}
+
+.atb-3d-d:not(.atb-default) {
+	color: #fff;
+}
+
+.atb-3d-d.atb-primary {
+	background-color: #337ab7;
+	box-shadow: -4px 0 #285F8F;
+}
+
+.atb-3d-d.atb-success {
+	background-color: #5cb85c;
+	box-shadow: -4px 0 #459D45;
+}
+
+.atb-3d-d.atb-info {
+	background-color: #5bc0de;
+	box-shadow: -4px 0 #289FC3;
+}
+
+.atb-3d-d.atb-warning {
+	background-color: #f0ad4e;
+	box-shadow: -4px 0 #EC961D;
+}
+
+.atb-3d-d.atb-danger {
+	background-color: #d9534f;
+	box-shadow: -4px 0 rgb(208, 5, 0);
+}
+
+.atb-3d-d.atb-black {
+	background-color: #28373b;
+	box-shadow: -4px 0 #0d1213;
+}
+
+.atb-3d-d.atb-pink {
+	background-color: #9d5db8;
+	box-shadow: -4px 0 #82459D;
+}
+
+.atb-3d-d.atb-turquoise {
+	background-color: #1abc9c;
+	box-shadow: -4px 0 #149077;
+}
+
+.atb-3d-d.atb-primary:hover {
+	box-shadow: -2px 0 #285F8F;
+	left: -1px;
+}
+
+.atb-3d-d.atb-success:hover {
+	box-shadow: -2px 0 #459D45;
+	left: -1px;
+}
+
+.atb-3d-d.atb-info:hover {
+	box-shadow: -2px 0 #289FC3;
+	left: -1px;
+}
+
+.atb-3d-d.atb-warning:hover {
+	box-shadow: -2px 0 #EC961D;
+	left: -1px;
+}
+
+.atb-3d-d.atb-danger:hover {
+	box-shadow: -2px 0 rgb(208, 5, 0);
+	left: -1px;
+}
+
+.atb-3d-d.atb-black:hover {
+	box-shadow: -2px 0 #0d1213;
+	left: -1px;
+}
+
+.atb-3d-d.atb-pink:hover {
+	box-shadow: -2px 0 #82459D;
+	left: -1px;
+}
+
+.atb-3d-d.atb-turquoise:hover {
+	box-shadow: -2px 0 #149077;
+	left: -1px;
+}
+
+.atb-3d-d.atb-primary:active {
+	box-shadow: 0 0 #285F8F;
+	left: -4px;
+}
+
+.atb-3d-d.atb-success:active {
+	box-shadow: 0 0 #459D45;
+	left: -4px;
+}
+
+.atb-3d-d.atb-info:active {
+	box-shadow: 0 0 #289FC3;
+	left: -4px;
+}
+
+.atb-3d-d.atb-warning:active {
+	box-shadow: 0 0 #EC961D;
+	left: -4px;
+}
+
+.atb-3d-d.atb-danger:active {
+	box-shadow: 0 0 rgb(208, 5, 0);
+	left: -4px;
+}
+
+.atb-3d-d.atb-black:active {
+	box-shadow: 0 0 #0d1213;
+	left: -4px;
+}
+
+.atb-3d-d.atb-pink:active {
+	box-shadow: 0 0 #82459D;
+	left: -4px;
+}
+
+.atb-3d-d.atb-turquoise:active {
+	box-shadow: 0 0 #149077;
+	left: -4px;
+}
+
+/*=============================
+Common Styles
+===============================*/
+[class*="atb-"] {
+	min-width: 95px;
+	padding: 11px 15px;
+	display: inline-block;
+	position: relative;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	text-decoration: none !important;
+	text-align: center;
+}
+
+/* Button Size */
+.atb-large {
+	padding: 13px 20px;
+	font-size: 14px;
+}
+
+.atb-large[class*="atb-modern-"] {
+	padding: 16px 25px;
+	font-size: 17px;
+}
+
+.atb-small {
+	padding: 9px 12px;
+	font-size: 11px;
+}
+
+/* Button Radius */
+.atb-pill {
+	-webkit-border-radius: 40px;
+	border-radius: 40px;
+}
+
+.atb-round {
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/* Fullwidth Button */
+.atb-fullwidth {
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*=============================
+Button Styles
+===============================*/
+.atb-3d-d.atb-turquoise {
+	background-color: #1abc9c;
+	box-shadow: -4px 0 #149077;
+}
+
+.atb-3d-d.atb-turquoise:hover {
+	box-shadow: -2px 0 #149077;
+	left: -1px;
+}
+
+.atb-3d-d.atb-turquoise:active {
+	box-shadow: 0 0 #149077;
+	left: -4px;
+}

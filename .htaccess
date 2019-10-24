@@ -1,0 +1,86 @@
+#URL Amigables
+RewriteEngine on
+
+#Redireccionar "index.php" a la url amigable
+RewriteCond %{THE_REQUEST} ^(GET|HEAD)\ /index\.php/[^\ ]+
+
+#Migra de http a https con .htaccess
+#RewriteCond %{HTTPS} !=on
+#RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+
+
+RewriteRule ^index\.php/(.*)$ /$1 [L,R=301]
+#Revisar aqui cuando se valla a restaurar la contraseña
+Rewriterule ^(.*)/(.*)/$ index.php?vista=$1&codigo=$2 [NC]
+RewriteRule ^(\w+)$ index.php?vista=$1 [NC]
+RewriteRule ^(\w+)$ index.php?op=$1 [NC]
+
+
+
+
+
+# Para denegar el acceso a todos los archivos htaccess
+<files ~ "^.*\.([Hh][Tt][Aa])">
+order allow,deny
+deny from all
+satisfy all
+</files>
+
+# Habilitar el almacenamiento en caché del navegador
+<IfModule mod_expires.c>
+FileETag MTime Size
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType text/css "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 2 days"
+</IfModule>
+
+
+<ifModule mod_headers.c>
+#Permite mantener las conexiones abiertas entre el cliente y el servidor, aprovechando los recursos de esta sin tener que malgastarlos para poder abrir una nueva conexión para cada elemento de la página web cada vez que el cliente se conecte.
+    Header set Connection keep-alive
+
+#Forzar la carga de contenido mixto bajo HTTPS en lugar de HTTP
+    #Header always set Content-Security-Policy "upgrade-insecure-requests;"
+</ifModule>
+
+#Block bad bots
+SetEnvIfNoCase user-Agent ^FrontPage [NC,OR]
+SetEnvIfNoCase user-Agent ^Java.* [NC,OR]
+SetEnvIfNoCase user-Agent ^Microsoft.URL [NC,OR]
+SetEnvIfNoCase user-Agent ^MSFrontPage [NC,OR]
+SetEnvIfNoCase user-Agent ^Offline.Explorer [NC,OR]
+SetEnvIfNoCase user-Agent ^[Ww]eb[Bb]andit [NC,OR]
+SetEnvIfNoCase user-Agent ^Zeus [NC]
+Deny from env=bad_bot
+
+#Desabilita la ventana de aviso de descarga
+AddType application/octet-stream .pdf
+AddType application/octet-stream .zip
+AddType application/octet-stream .mov
+
+#Aqui muestro los errores personalizados
+ErrorDocument 400: /Vista/CosasAdmin/Administrador/CosasError/400.php
+ErrorDocument 403: /Vista/CosasAdmin/Administrador/CosasError/403.php
+ErrorDocument 404: /Vista/CosasAdmin/Administrador/CosasError/404.php
+ErrorDocument 500: /Vista/CosasAdmin/Administrador/CosasError/500.php
+ErrorDocument 503: /Vista/CosasAdmin/Administrador/CosasError/503.php
+
+# Especificar códificación de caracteres
+AddDefaultCharset utf-8
+
+# Seleccionar la hora de venezuela
+SetEnv TZ America/Caracas
+
+#comprimir archivos para mejorar la velocidad de carga
+SetOutputFilter DEFLATE
+
+#Inpedir que se muestren mis directorios
+Options All -Indexes

@@ -1,0 +1,43 @@
+//Triger para actualizar la cantidad de producto restando la cantidad a la tabla producto
+DELIMITER //
+CREATE TRIGGER actualizarproductocompra AFTER INSERT ON carrito_compra
+    FOR EACH ROW BEGIN
+    UPDATE producto SET pro_cantidad = pro_cantidad - NEW.car_cantidadproducto 
+    WHERE producto.pro_idproducto = NEW.pro_id;
+END
+//
+DELIMITER ;
+
+
+//El primer update es para cuando se elimine un producto de la tabla carrito_compra se agregue de nuevo a la tabla producto con la cantidad sumada
+//El segundo update es para que cuando se elimine un producto del carrito se actualize el precio total de la compra restando el precio del producto que se elimino con el precio total del producto
+DELIMITER //
+CREATE TRIGGER quitarproductocompra AFTER DELETE ON carrito_compra
+    FOR EACH ROW BEGIN
+
+    UPDATE producto SET pro_cantidad = pro_cantidad + OLD.car_cantidadproducto 
+    WHERE producto.pro_idproducto = OLD.pro_id;
+
+
+      IF ((SELECT compra.com_cantidad - OLD.car_cantidadproducto FROM compra WHERE compra.com_id = OLD.com_idprincipal) <= 0) THEN
+            DELETE FROM compra WHERE compra.com_id = OLD.com_idprincipal;
+      ELSE
+    	UPDATE compra SET com_precio = com_precio - OLD.car_precioproductototal, com_cantidad = com_cantidad - OLD.car_cantidadproducto WHERE compra.com_id = OLD.com_idprincipal;
+      END IF;
+
+END
+//
+DELIMITER ;
+
+//Aqui elimino todos los comprobantes despues de eliminar una transaccion
+DELIMITER //
+CREATE TRIGGER quitarcomprobantecompra AFTER DELETE ON transaccion
+    FOR EACH ROW BEGIN
+    DELETE FROM comprobante WHERE comprobante.com_id = OLD.com_idcomprobante;
+END
+//
+DELIMITER ;
+
+
+
+

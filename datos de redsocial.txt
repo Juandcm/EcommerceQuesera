@@ -1,0 +1,26 @@
+https://vk.com/dev
+user: correo
+contr: quesera1234
+
+VK
+ID de la app	6998311
+clave de seguridad: jPjeOTqUd5tJqPnex4ia
+Token de servicio: cb7b37a5cb7b37a5cb7b37a538cb11fe82ccb7bcb7b37a597919ad05eaffa35b20dba07
+
+
+
+Direccion: Avenida nueva barinas, urb. la rosaleda, local n: 15
+
+
+TUMBLR
+usuario: correo
+contraseña: quesera1234
+Clave de consumidor de OAuth:
+gM2N8xYg4gJ2NAGYoLGGoBzKHGg7GX4dOHtxpPIXob1GG5p4Tz
+Pregunta secreta de consumidor de OAuth:
+7PP9WfRZpscKoTokicfU2hln25pDV8OpdpduqJ3yjkwTiF10Uc
+
+
+https://api.tumblr.com/v2/blog/queseralosllanos.tumblr.com/info?api_key=gM2N8xYg4gJ2NAGYoLGGoBzKHGg7GX4dOHtxpPIXob1GG5p4Tz
+https://api.tumblr.com/v2/blog/queseralosllanos.tumblr.com/posts?api_key=gM2N8xYg4gJ2NAGYoLGGoBzKHGg7GX4dOHtxpPIXob1GG5p4Tz
+https://api.tumblr.com/v2/blog/queseralosllanos.tumblr.com/posts?title=nuevo&body=cuerpo&api_key=gM2N8xYg4gJ2NAGYoLGGoBzKHGg7GX4dOHtxpPIXob1GG5p4Tz
